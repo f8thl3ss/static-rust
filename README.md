@@ -5,7 +5,7 @@ Dead simple web-server using rust and serving files and static web-app from a ha
 ## How to use:
 - Put your stuff in the container directory `/static`
 ```
-FROM --platform=linux/arm/v7 node as build
+FROM --platform=linux/arm/v7 node as builder
 
 ...
 
