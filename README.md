@@ -1,8 +1,20 @@
 # static-rust
 
-Simple web-server using rust and serving files and static web-app from a hard-coded directory
+Dead simple web-server using rust and serving files and static web-app from a hard-coded directory
 
 ## To use:
-- Pull the image
 - Put your stuff in the container directory /static
-- Start the container `docker run -p ${MY_PORT}:3000 f8thl3ss/static-rust`
+```
+FROM --platform=linux/arm/v7 node as build
+
+...
+
+RUN npm build
+
+FROM --platform=linux/arm/v7 f8thl3ss/static-rust:1.0
+
+COPY --from=builder /home/node/build /static
+```
+- Build your image
+- Start the container `docker run -p 127.0.0.1:3000:3000 {MY_IMAGE}`
+- You can access your static website on localhost:3000 
