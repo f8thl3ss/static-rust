@@ -3,7 +3,7 @@
 Dead simple web-server using rust and serving files and static web-app from a hard-coded directory
 
 ## How to use:
-- Put your stuff in the container directory /static
+- Put your stuff in the container directory `/static`
 ```
 FROM --platform=linux/arm/v7 node as build
 
